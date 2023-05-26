@@ -1,0 +1,674 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+/* estilos generales*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    cursor: none;
+}
+
+body {
+    background: #081b29;
+    color: #ededed;
+    max-width: 1280px;
+    max-height: 800px;
+    margin: 0
+}
+
+body::-webkit-scrollbar {
+    background-color: transparent;
+}
+
+#cursor{
+    width: 5em;
+    height: 5em;
+    position: fixed;
+    background-color: white;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    pointer-events: none;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+}
+
+/* estilos generales*/
+
+
+/* Menu*/
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    z-index: 1;
+}
+
+.logo {
+    position: relative;
+    font-size: 25px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
+    background: #081b29;
+}
+
+.checkbtn{
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+
+
+@media (max-width: 858px) {
+    .checkbtn{
+        display: block;
+    }
+
+    a {
+        position: relative;
+        width: 100%;
+        left: 10%;
+    }
+
+}
+
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    animation: showRight 1s ease forwards;
+    animation-delay: .5s;
+    background: #081b29;
+    z-index: 2;
+}
+
+
+.navbar a:hover,
+.navbar a.active {
+    color: #00abf0;
+}
+
+/* Menu*/
+
+/*Primera (y quizas unica section del home)*/
+
+.home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.home-content{
+    max-width: 600px;
+}
+
+.home-content h1 {
+    position: relative;
+    font-size: 56px;
+    font-weight: 700;
+}
+
+.home-content h1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
+    background: #081b29;
+}
+
+
+.home-content h3 {
+    position: relative;
+    font-size: 32px;
+    font-weight: 700;
+    color: #00abf0;
+}
+
+.home-content h3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
+    background: #081b29;
+}
+
+.home-content p {
+    position: relative;
+    font-size: 16px;
+    margin: 20px 0 40px;
+}
+
+.home-content p::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
+    background: #081b29;
+}
+
+.home-content .btn-box {
+    position: relative;
+    width: 345px;
+    height: 50px;
+}
+
+.home-content .btn-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    animation: showRight 1s ease forwards;
+    animation-delay: .7s;
+    background: #081b29;
+    z-index: 2;
+}
+/*Botones*/
+
+.btn-box a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 100%;
+    background: transparent;
+    border: 2px solid #00abf0;
+    border-radius: 8px;
+    font-size: 19px;
+    color: #081b29;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #00abf0;
+    overflow: hidden;
+    transform: .5s;
+}
+
+.btn-box a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #00abf0;
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn-box a:hover::before{
+    width: 100%;
+}
+
+.btn-box a:hover{
+    color: #081b29;
+}
+
+/*Botones*/
+
+/*Imagenes y circulos*/
+
+.imgbox {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.imgbox img{
+    position: relative;
+    height: 100%;
+    width: calc(130% - 80px);
+    top: -100px;
+    right: 50px;
+    animation: animateUser 4s linear infinite;
+}
+
+
+.imgbox #splash{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-35deg);
+    width: 160%;
+    filter: saturate(200%);
+    animation: animate 4s linear infinite;
+    filter: saturate(200%);
+}
+
+
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 80px);
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+    overflow: hidden;
+}
+
+.home::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
+    background: #081b29;
+}
+
+.home-content h1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
+    background: #081b29;
+}
+.wrapper::before{
+    position: absolute;
+    content: '';
+    height: 500px;
+    width: 400px;
+    border-radius: 50%;
+    left: -12%;
+    top: 40%;
+    background: linear-gradient(45deg, #7f00ff, pink);
+    animation: showRight 1s ease forwards;
+    animation: object1 6s linear infinite;
+    z-index: -5;
+}
+
+.wrapper::after{
+    position: absolute;
+    content: '';
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    left: 47%;
+    top: 12%;
+    background: linear-gradient(45deg, #7f00ff, pink);
+    animation: object2 6s linear infinite;
+    z-index: -5;
+}
+
+.wrapper2::before{
+    position: absolute;
+    content: '';
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    left: 90%;
+    top: 20%;
+    background: linear-gradient(45deg, #7f00ff, pink);
+    animation: showRight 1s ease forwards;
+    animation: object3 6s linear infinite;
+    z-index: -5;
+}
+
+
+.wrapper2::after{
+    position: absolute;
+    content: '';
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    left: 50%;
+    top: 90%;
+    background: linear-gradient(45deg, #7f00ff, pink);
+    animation: showRight 1s ease forwards;
+    animation: object4 6s linear infinite;
+    z-index: -5;
+}
+
+/*Imagenes y circulos*/
+
+/*Animaciones*/
+
+@keyframes animateUser{
+    50%{
+        right: 30px;
+        top: -90px;
+    }
+}
+
+@keyframes animate{
+    50%{
+        right: 49%;
+        top: 51%;
+        width: 155%;
+    }
+}
+
+@keyframes object1{
+    50% {
+        left: -13%;
+        top: 41%;
+    }
+}
+
+@keyframes object2{
+    50% {
+        left: 40%;
+        top: 16%;
+    }
+}
+
+@keyframes object3{
+    50% {
+        left: 80%;
+        top: 16%;
+    }
+}
+
+@keyframes object4{
+    50% {
+        left: 54%;
+        top: 87%;
+    }
+}
+
+@keyframes object5{
+    50% {
+        left: 80%;
+        top: 30%;
+    }
+}
+
+@keyframes object6{
+    50% {
+        left: 10%;
+        top: 30%;
+    }
+}
+
+
+@keyframes showRight {
+    100% {
+        width: 0;
+    }
+}
+
+
+
+/*Animaciones*/
+
+/*Primera (y quizas unica section del home)*/
+
+/*Pagina SERVICIOS*/
+
+.servicios {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20%;
+}
+
+.servicios h2 {
+    color: #00abf0;
+    height: 70px;
+    width: 700px;
+    position: relative;
+    font-size: 56px;
+    font-weight: 700;
+    
+}
+
+.servicios::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
+    background: #081b29;
+}
+
+/*Pagina SERVICIOS*/
+
+
+/*Pagina PortFolio*/
+
+/*Circulos*/
+
+
+
+.wrapper3::before{
+    position: absolute;
+    content: '';
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    left: 90%;
+    top: 20%;
+    background: linear-gradient(45deg, #7f00ff, pink);
+    animation: showRight 1s ease forwards;
+    animation: object3 6s linear infinite;
+    z-index: -5;
+}
+
+
+.wrapper3::after{
+    position: absolute;
+    content: '';
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    left: 50%;
+    top: 90%;
+    background: linear-gradient(45deg, #7f00ff, pink);
+    animation: showRight 1s ease forwards;
+    animation: object4 6s linear infinite;
+    z-index: -5;
+}
+
+/*Circulos*/
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #7f00ff;
+    width: 400px;
+    margin: 20px;
+    margin-top: 5%;
+    border-radius: 15px;
+}
+
+.card-image {
+    background-color: white;
+    height: 400px;
+    width: 400px;
+    margin-bottom: 15px;
+    background-size: cover;
+    border-radius: 15px;
+}
+
+.card p {
+    padding: 10px ;
+}
+
+.card h2 {
+    padding: 40px;
+}
+
+.card a {
+    background-color: black;
+    color: white;
+    padding: 15px 20px;
+    display: block;
+    text-align: center;
+    margin: 20px 50px;
+}
+
+.card:hover {
+    background-color: rgb(62, 62, 62);
+    color: white;
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: all 1s ease;
+}
+
+/*Pagina Portfolio*/
+
+/*Pagina Nosotros*/
+
+/*Circulos*/
+
+.wrapper4::before{
+    position: absolute;
+    content: '';
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    left: 90%;
+    top: 20%;
+    background: linear-gradient(45deg, #7f00ff, pink);
+    animation: showRight 1s ease forwards;
+    animation: object5 6s linear infinite;
+    z-index: -5;
+}
+
+.wrapper4::after{
+    position: absolute;
+    content: '';
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    left: 10%;
+    top: 20%;
+    background: linear-gradient(45deg, #7f00ff, pink);
+    animation: showRight 1s ease forwards;
+    animation: object6 6s linear infinite;
+    z-index: -5;
+}
+
+/*Circulos*/
+
+.uwu::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
+    background: #081b29;
+}
+
+.Nosotros {
+    margin-top: 10%;
+    margin-left: 40%;
+    position: relative;
+    height: calc(100vh - 50px);
+}
+
+
+
+.AboutUs{
+    max-width: 600px;
+}
+
+.AboutUs h1{
+    margin: 20px;
+    font-size: 80px;
+    color: #00abf0
+}
+
+
+.AboutUs p {
+    position: relative;
+    font-size: 30px;
+    margin: 20px 0 40px;
+}
+
+
+.AboutUs {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+
+/*Pagina Nosotros*/
+
+
+
